@@ -20,29 +20,29 @@
     footer{background:#0d3d27;color:#fff;padding:34px 0;text-align:center}footer p{margin:6px 0 0;opacity:.85}
     @media(max-width:980px){.hero-wrap,.mission-grid{grid-template-columns:1fr}.metric-grid{grid-template-columns:repeat(2,1fr)}.nav-links{display:none}.dashboard-toolbar{align-items:flex-start;flex-direction:column}}@media(max-width:640px){.hero{padding-top:46px}.metric-grid,.detail-grid,.stats{grid-template-columns:1fr}section{padding:56px 0}.post-body{padding:20px}.post-card h3{font-size:24px}}
   
-    .metric.clickable{cursor:pointer;transition:.2s ease;position:relative;overflow:hidden}
-    .metric.clickable:hover{transform:translateY(-3px);border-color:rgba(47,125,50,.28);box-shadow:0 22px 55px rgba(15,91,56,.15)}
-    .metric.clickable::after{content:"View History →";display:block;margin-top:10px;color:var(--green);font-size:12px;font-weight:800}
-    .modal-backdrop{position:fixed;inset:0;background:rgba(10,38,25,.66);backdrop-filter:blur(7px);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px}
-    .modal-backdrop.open{display:flex}
-    .hba1c-modal{width:min(760px,96vw);max-height:88vh;overflow:auto;background:#fff;border-radius:28px;box-shadow:0 35px 100px rgba(0,0,0,.28)}
-    .hba1c-modal-header{padding:26px;background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
-    .hba1c-modal-header h2{margin:0 0 6px;font-size:30px}.hba1c-modal-header p{margin:0;opacity:.88}
-    .modal-close{border:0;width:42px;height:42px;border-radius:50%;cursor:pointer;background:rgba(255,255,255,.16);color:#fff;font-size:22px}
-    .hba1c-modal-body{padding:26px}
-    .hba1c-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
-    .hba1c-summary-card{background:#f5faef;border:1px solid rgba(47,125,50,.10);border-radius:18px;padding:18px}
-    .hba1c-summary-card span{display:block;font-size:12px;color:var(--muted);font-weight:700}
-    .hba1c-summary-card strong{display:block;color:var(--green-dark);font-size:27px;margin-top:4px}
-    .hba1c-history-list{position:relative;padding-left:24px}
-    .hba1c-history-list::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:#d9e9d2}
-    .hba1c-history-item{position:relative;background:#fff;border:1px solid rgba(47,125,50,.10);border-radius:18px;padding:18px;margin-bottom:14px}
-    .hba1c-history-item::before{content:"";position:absolute;left:-24px;top:24px;width:14px;height:14px;border-radius:50%;background:var(--green);border:3px solid #fff;box-shadow:0 0 0 2px #d9e9d2}
-    .hba1c-row{display:flex;justify-content:space-between;gap:16px;align-items:center}
-    .hba1c-value{font-size:30px;font-weight:800;color:var(--green-dark)}
-    .hba1c-change.down{color:#17823b}.hba1c-change.up{color:#b83c3c}
-    .hba1c-note{margin-top:10px;color:var(--muted)}
-    @media(max-width:650px){.hba1c-summary{grid-template-columns:1fr}}
+.metric.clickable{cursor:pointer;transition:.2s ease;position:relative;overflow:hidden}
+.metric.clickable:hover{transform:translateY(-3px);border-color:rgba(47,125,50,.28);box-shadow:0 22px 55px rgba(15,91,56,.15)}
+.metric.clickable::after{content:"View History →";display:block;margin-top:10px;color:var(--green);font-size:12px;font-weight:800}
+.modal-backdrop{position:fixed;inset:0;background:rgba(10,38,25,.66);backdrop-filter:blur(7px);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-backdrop.open{display:flex}
+.hba1c-modal{width:min(760px,96vw);max-height:88vh;overflow:auto;background:#fff;border-radius:28px;box-shadow:0 35px 100px rgba(0,0,0,.28)}
+.hba1c-modal-header{padding:26px;background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+.hba1c-modal-header h2{margin:0 0 6px;font-size:30px}.hba1c-modal-header p{margin:0;opacity:.88}
+.modal-close{border:0;width:42px;height:42px;border-radius:50%;cursor:pointer;background:rgba(255,255,255,.16);color:#fff;font-size:22px}
+.hba1c-modal-body{padding:26px}
+.hba1c-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
+.hba1c-summary-card{background:#f5faef;border:1px solid rgba(47,125,50,.10);border-radius:18px;padding:18px}
+.hba1c-summary-card span{display:block;font-size:12px;color:var(--muted);font-weight:700}
+.hba1c-summary-card strong{display:block;color:var(--green-dark);font-size:27px;margin-top:4px}
+.hba1c-history-list{position:relative;padding-left:24px}
+.hba1c-history-list::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:#d9e9d2}
+.hba1c-history-item{position:relative;background:#fff;border:1px solid rgba(47,125,50,.10);border-radius:18px;padding:18px;margin-bottom:14px}
+.hba1c-history-item::before{content:"";position:absolute;left:-24px;top:24px;width:14px;height:14px;border-radius:50%;background:var(--green);border:3px solid #fff;box-shadow:0 0 0 2px #d9e9d2}
+.hba1c-row{display:flex;justify-content:space-between;gap:16px;align-items:center}
+.hba1c-value{font-size:30px;font-weight:800;color:var(--green-dark)}
+.hba1c-change.down{color:#17823b}.hba1c-change.up{color:#b83c3c}
+.hba1c-note{margin-top:10px;color:var(--muted)}
+@media(max-width:650px){.hba1c-summary{grid-template-columns:1fr}}
 
 </style>
 </head>
@@ -60,10 +60,7 @@
 <div id="hba1cModal" class="modal-backdrop" onclick="closeHbA1cModalOnBackdrop(event)">
   <div class="hba1c-modal">
     <div class="hba1c-modal-header">
-      <div>
-        <h2>My HbA1c Journey</h2>
-        <p>Tracking the path from 11.1% toward my 5.5% target.</p>
-      </div>
+      <div><h2>My HbA1c Journey</h2><p>Tracking the path from 11.1% toward my 5.5% target.</p></div>
       <button class="modal-close" onclick="closeHbA1cModal()">×</button>
     </div>
     <div class="hba1c-modal-body">
@@ -73,252 +70,105 @@
   </div>
 </div>
 
-
 <script>
 const API_URL='https://script.google.com/macros/s/AKfycbwj80e4PV8oHsAIDrh9SGBDIDy1WuHDjVcLyzQgrQeC5xh9NOG4-sS2torGyEju-bOFgA/exec';
-let selectedRange='30';
-let latestPublicData=null;
+let selectedRange='30',latestPublicData=null;
 
 const metricDefinitions=[
-  ['Current Journey Day','currentJourneyDay',v=>v??'—'],
-  ['Latest Weight','latestWeight',v=>v==null?'—':`${v} kg`],
-  ['Average Weight','averageWeight',v=>v==null?'—':`${v} kg`],
-  ['Weight Change','weightChange',v=>v==null?'—':`${v>0?'+':''}${v} kg`],
-  ['Yoga Days','yogaDays',v=>v??0],
-  ['Average Steps','averageSteps',v=>v==null?'—':Math.round(v).toLocaleString()],
-  ['Average Sleep','averageSleep',v=>v==null?'—':`${v} hrs`],
-  ['Early Dinner Days','earlyDinnerDays',v=>v??0],
-  ['Latest HbA1c','latestHbA1c',v=>v==null?'—':`${v}%`],
-  ['Recipes','recipePosts',v=>v??0],
-  ['Health Updates','healthUpdates',v=>v??0],
-  ['Published Posts','totalPosts',v=>v??0]
+['Current Journey Day','currentJourneyDay',v=>v??'—'],
+['Latest Weight','latestWeight',v=>v==null?'—':`${v} kg`],
+['Average Weight','averageWeight',v=>v==null?'—':`${v} kg`],
+['Weight Change','weightChange',v=>v==null?'—':`${v>0?'+':''}${v} kg`],
+['Yoga Days','yogaDays',v=>v??0],
+['Average Steps','averageSteps',v=>v==null?'—':Math.round(v).toLocaleString()],
+['Average Sleep','averageSleep',v=>v==null?'—':`${v} hrs`],
+['Early Dinner Days','earlyDinnerDays',v=>v??0],
+['Latest HbA1c','latestHbA1c',v=>v==null?'—':`${v}%`],
+['Recipes','recipePosts',v=>v??0],
+['Health Updates','healthUpdates',v=>v??0],
+['Published Posts','totalPosts',v=>v??0]
 ];
 
 document.getElementById('year').textContent=new Date().getFullYear();
 
-document.querySelectorAll('.filter-btn').forEach(button=>{
-  button.addEventListener('click',()=>{
-    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-    button.classList.add('active');
-    selectedRange=button.dataset.range;
-    loadData();
-  });
-});
+document.querySelectorAll('.filter-btn').forEach(button=>button.addEventListener('click',()=>{
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  button.classList.add('active');selectedRange=button.dataset.range;loadData();
+}));
 
 function loadData(){
   document.getElementById('metrics').innerHTML='<div class="status-box">Loading dashboard...</div>';
   document.getElementById('timelineList').innerHTML='<div class="status-box">Loading journey history...</div>';
 
-  const callbackName='hwvCallback_'+Date.now();
-  const script=document.createElement('script');
+  const cb='hwvCallback_'+Date.now();
+  const s=document.createElement('script');
 
-  window[callbackName]=function(data){
-    try{
-      if(!data||!data.ok) throw new Error('Unable to load public data.');
-      latestPublicData=data;
-      renderMetrics(data.dashboard||{});
-      renderTimeline(data.posts||[]);
-    }catch(error){
-      showLoadError(error.message);
-    }finally{
-      delete window[callbackName];
-      script.remove();
-    }
+  const timer=setTimeout(()=>{cleanup();showLoadError('Health data request timed out. Please refresh once.');},15000);
+
+  function cleanup(){
+    clearTimeout(timer);
+    try{delete window[cb]}catch(e){window[cb]=undefined}
+    if(s.parentNode)s.parentNode.removeChild(s);
+  }
+
+  window[cb]=data=>{
+    cleanup();
+    if(!data||!data.ok){showLoadError('Unable to load public data.');return;}
+    latestPublicData=data;
+    renderMetrics(data.dashboard||{});
+    renderTimeline(data.posts||[]);
   };
 
-  script.src=`${API_URL}?mode=public&range=${encodeURIComponent(selectedRange)}&callback=${callbackName}`;
-  script.onerror=function(){
-    showLoadError('Unable to connect to the health data service.');
-    delete window[callbackName];
-    script.remove();
-  };
-
-  document.body.appendChild(script);
+  s.onerror=()=>{cleanup();showLoadError('Unable to connect to the health data service.');};
+  s.src=`${API_URL}?mode=public&range=${encodeURIComponent(selectedRange)}&callback=${encodeURIComponent(cb)}&_=${Date.now()}`;
+  document.body.appendChild(s);
 }
 
-function renderMetrics(dashboard){
+function renderMetrics(d){
   document.getElementById('metrics').innerHTML=metricDefinitions.map(([label,key,format])=>{
-    const clickable=key==='latestHbA1c';
-    const extraDate=
-      key==='latestHbA1c'&&dashboard.latestHbA1cDate
-        ? `<small style="display:block;margin-top:8px;color:var(--muted)">${formatDate(dashboard.latestHbA1cDate)}</small>`
-        : '';
-
-    return `<article class="metric ${clickable?'clickable':''}" ${clickable?'onclick="openHbA1cModal()"':''}>
-      <span>${escapeHtml(label)}</span>
-      <strong>${escapeHtml(String(format(dashboard[key])))}</strong>
-      ${extraDate}
-    </article>`;
+    const click=key==='latestHbA1c';
+    const date=click&&d.latestHbA1cDate?`<small style="display:block;margin-top:8px;color:var(--muted)">${formatDate(d.latestHbA1cDate)}</small>`:'';
+    return `<article class="metric ${click?'clickable':''}" ${click?'onclick="openHbA1cModal()"':''}><span>${escapeHtml(label)}</span><strong>${escapeHtml(String(format(d[key])))}</strong>${date}</article>`;
   }).join('');
 }
 
 function renderTimeline(posts){
-  const container=document.getElementById('timelineList');
-
-  if(!posts.length){
-    container.innerHTML='<div class="status-box">No published entries are available for this selected period yet.</div>';
-    return;
-  }
-
-  container.innerHTML=posts.map(post=>{
+  const c=document.getElementById('timelineList');
+  if(!posts.length){c.innerHTML='<div class="status-box">No published entries are available for this selected period yet.</div>';return;}
+  c.innerHTML=posts.map(post=>{
     const details=[];
-
-    addDetail(details,'Yoga',joinParts([
-      post.yogaPractice,
-      post.yogaDurationMin?`${post.yogaDurationMin} minutes`:'',
-      post.pranayama?`Pranayama: ${post.pranayama}`:''
-    ]));
-
-    addDetail(details,'Food I Ate',joinParts([
-      post.breakfast?`Breakfast: ${post.breakfast}`:'',
-      post.lunch?`Lunch: ${post.lunch}`:'',
-      post.dinner?`Dinner: ${post.dinner}`:'',
-      post.snacksDrinks?`Snacks / Drinks: ${post.snacksDrinks}`:''
-    ]));
-
-    addDetail(details,'Recipe',joinParts([
-      post.recipeName,
-      post.recipeIngredients?`Ingredients: ${post.recipeIngredients}`:'',
-      post.recipeMethod?`Method: ${post.recipeMethod}`:''
-    ]));
-
-    addDetail(details,'Health & Progress',joinParts([
-      post.weightKg?`Weight: ${post.weightKg} kg`:'',
-      post.steps?`Steps: ${post.steps}`:'',
-      post.sleepHours?`Sleep: ${post.sleepHours} hrs`:'',
-      post.waterLitres?`Water: ${post.waterLitres} L`:'',
-      post.dinnerTime?`Dinner time: ${post.dinnerTime}`:'',
-      post.hba1c?`HbA1c: ${post.hba1c}%`:'',
-      post.healthUpdate
-    ]));
-
+    addDetail(details,'Yoga',joinParts([post.yogaPractice,post.yogaDurationMin?`${post.yogaDurationMin} minutes`:'',post.pranayama?`Pranayama: ${post.pranayama}`:'']));
+    addDetail(details,'Food I Ate',joinParts([post.breakfast?`Breakfast: ${post.breakfast}`:'',post.lunch?`Lunch: ${post.lunch}`:'',post.dinner?`Dinner: ${post.dinner}`:'',post.snacksDrinks?`Snacks / Drinks: ${post.snacksDrinks}`:'']));
+    addDetail(details,'Recipe',joinParts([post.recipeName,post.recipeIngredients?`Ingredients: ${post.recipeIngredients}`:'',post.recipeMethod?`Method: ${post.recipeMethod}`:'']));
+    addDetail(details,'Health & Progress',joinParts([post.weightKg?`Weight: ${post.weightKg} kg`:'',post.steps?`Steps: ${post.steps}`:'',post.sleepHours?`Sleep: ${post.sleepHours} hrs`:'',post.waterLitres?`Water: ${post.waterLitres} L`:'',post.dinnerTime?`Dinner time: ${formatDinnerTime(post.dinnerTime)}`:'',post.hba1c?`HbA1c: ${post.hba1c}%`:'',post.healthUpdate]));
     addDetail(details,'Milestone',post.milestone);
-
-    return `<article class="post-card">
-      ${post.imageUrl?`<img class="post-image" src="${escapeAttribute(post.imageUrl)}" alt="${escapeAttribute(post.title||'Healthy with Venkat journey image')}" loading="lazy">`:''}
-      <div class="post-body">
-        <div class="post-meta">
-          <span class="badge">${escapeHtml(post.postType||'Journey')}</span>
-          ${post.journeyDay?`<span class="badge">Day ${escapeHtml(String(post.journeyDay))}</span>`:''}
-          <span class="post-date">${formatDate(post.date)}</span>
-        </div>
-        <h3>${escapeHtml(post.title||'Journey Update')}</h3>
-        ${post.story?`<div class="story">${escapeHtml(post.story)}</div>`:''}
-        ${details.length?`<div class="detail-grid">${details.join('')}</div>`:''}
-      </div>
-    </article>`;
+    return `<article class="post-card">${post.imageUrl?`<img class="post-image" src="${escapeAttribute(post.imageUrl)}" alt="${escapeAttribute(post.title||'Healthy with Venkat journey image')}" loading="lazy">`:''}<div class="post-body"><div class="post-meta"><span class="badge">${escapeHtml(post.postType||'Journey')}</span>${post.journeyDay?`<span class="badge">Day ${escapeHtml(String(post.journeyDay))}</span>`:''}<span class="post-date">${formatDate(post.date)}</span></div><h3>${escapeHtml(post.title||'Journey Update')}</h3>${post.story?`<div class="story">${escapeHtml(post.story)}</div>`:''}${details.length?`<div class="detail-grid">${details.join('')}</div>`:''}</div></article>`;
   }).join('');
 }
 
 function openHbA1cModal(){
-  const history=latestPublicData&&Array.isArray(latestPublicData.hba1cHistory)
-    ? latestPublicData.hba1cHistory
-    : [];
-
-  const modal=document.getElementById('hba1cModal');
-  const summary=document.getElementById('hba1cSummary');
-  const list=document.getElementById('hba1cHistoryList');
-
-  if(!history.length){
-    summary.innerHTML='';
-    list.innerHTML='<div class="status-box">No HbA1c history available yet.</div>';
-    modal.classList.add('open');
-    document.body.style.overflow='hidden';
-    return;
-  }
-
-  const latest=history[0];
-  const baseline=history[history.length-1];
-  const totalDrop=Number(baseline.hba1c)-Number(latest.hba1c);
-
-  summary.innerHTML=`
-    <div class="hba1c-summary-card">
-      <span>Latest HbA1c</span>
-      <strong>${escapeHtml(String(latest.hba1c))}%</strong>
-    </div>
-    <div class="hba1c-summary-card">
-      <span>Starting HbA1c</span>
-      <strong>${escapeHtml(String(baseline.hba1c))}%</strong>
-    </div>
-    <div class="hba1c-summary-card">
-      <span>Total Improvement</span>
-      <strong>${totalDrop>0?'-':''}${Math.abs(totalDrop).toFixed(1)}%</strong>
-    </div>
-  `;
-
-  list.innerHTML=history.map(item=>{
-    const change=Number(item.change);
-    const hasChange=item.change!==null&&item.change!==''&&!Number.isNaN(change);
-
-    return `<article class="hba1c-history-item">
-      <div class="hba1c-row">
-        <div>
-          <strong>${formatDate(item.date)}</strong>
-          ${item.labName?`<div style="color:var(--muted);font-size:13px">${escapeHtml(item.labName)}</div>`:''}
-        </div>
-        <div style="text-align:right">
-          <div class="hba1c-value">${escapeHtml(String(item.hba1c))}%</div>
-          ${hasChange?`<div class="hba1c-change ${change<0?'down':'up'}">${change>0?'+':''}${change}%</div>`:''}
-        </div>
-      </div>
-      ${item.notes?`<div class="hba1c-note">${escapeHtml(item.notes)}</div>`:''}
-    </article>`;
-  }).join('');
-
-  modal.classList.add('open');
-  document.body.style.overflow='hidden';
+  const h=latestPublicData&&Array.isArray(latestPublicData.hba1cHistory)?latestPublicData.hba1cHistory:[];
+  const m=document.getElementById('hba1cModal'),sum=document.getElementById('hba1cSummary'),list=document.getElementById('hba1cHistoryList');
+  if(!h.length){sum.innerHTML='';list.innerHTML='<div class="status-box">No HbA1c history available yet.</div>';m.classList.add('open');document.body.style.overflow='hidden';return;}
+  const latest=h[0],base=h[h.length-1],drop=Number(base.hba1c)-Number(latest.hba1c);
+  sum.innerHTML=`<div class="hba1c-summary-card"><span>Latest HbA1c</span><strong>${latest.hba1c}%</strong></div><div class="hba1c-summary-card"><span>Starting HbA1c</span><strong>${base.hba1c}%</strong></div><div class="hba1c-summary-card"><span>Total Improvement</span><strong>${drop>0?'-':''}${Math.abs(drop).toFixed(1)}%</strong></div>`;
+  list.innerHTML=h.map(i=>{const ch=Number(i.change),has=i.change!==null&&i.change!==''&&!Number.isNaN(ch);return `<article class="hba1c-history-item"><div class="hba1c-row"><div><strong>${formatDate(i.date)}</strong>${i.labName?`<div style="color:var(--muted);font-size:13px">${escapeHtml(i.labName)}</div>`:''}</div><div style="text-align:right"><div class="hba1c-value">${i.hba1c}%</div>${has?`<div class="hba1c-change ${ch<0?'down':'up'}">${ch>0?'+':''}${ch}%</div>`:''}</div></div>${i.notes?`<div class="hba1c-note">${escapeHtml(i.notes)}</div>`:''}</article>`}).join('');
+  m.classList.add('open');document.body.style.overflow='hidden';
 }
 
-function closeHbA1cModal(){
-  document.getElementById('hba1cModal').classList.remove('open');
-  document.body.style.overflow='';
-}
+function closeHbA1cModal(){document.getElementById('hba1cModal').classList.remove('open');document.body.style.overflow='';}
+function closeHbA1cModalOnBackdrop(e){if(e.target.id==='hba1cModal')closeHbA1cModal();}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeHbA1cModal();});
 
-function closeHbA1cModalOnBackdrop(event){
-  if(event.target.id==='hba1cModal'){
-    closeHbA1cModal();
-  }
-}
-
-document.addEventListener('keydown',event=>{
-  if(event.key==='Escape'){
-    closeHbA1cModal();
-  }
-});
-
-function addDetail(list,title,value){
-  if(!value)return;
-  list.push(`<div class="detail"><strong>${escapeHtml(title)}</strong><div>${escapeHtml(value)}</div></div>`);
-}
-
-function joinParts(parts){return parts.filter(Boolean).join('
-')}
-
-function formatDate(value){
-  if(!value)return'';
-  const date=new Date(`${value}T00:00:00`);
-  if(isNaN(date.getTime()))return escapeHtml(value);
-  return date.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});
-}
-
-function showLoadError(message){
-  document.getElementById('metrics').innerHTML=`<div class="status-box error">${escapeHtml(message)}</div>`;
-  document.getElementById('timelineList').innerHTML='<div class="status-box error">Unable to load the journey timeline.</div>';
-}
-
-function escapeHtml(value){
-  return String(value??'')
-    .replaceAll('&','&amp;')
-    .replaceAll('<','&lt;')
-    .replaceAll('>','&gt;')
-    .replaceAll('"','&quot;')
-    .replaceAll("'","&#039;");
-}
-
-function escapeAttribute(value){return escapeHtml(value)}
+function addDetail(list,title,value){if(value)list.push(`<div class="detail"><strong>${escapeHtml(title)}</strong><div>${escapeHtml(value)}</div></div>`);}
+function joinParts(parts){return parts.filter(Boolean).join('\n');}
+function formatDate(value){if(!value)return'';const d=new Date(`${value}T00:00:00`);if(isNaN(d.getTime()))return escapeHtml(value);return d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});}
+function formatDinnerTime(value){if(!value)return'';if(/^\d{1,2}:\d{2}$/.test(value))return value;const d=new Date(value);if(isNaN(d.getTime()))return value;return d.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',hour12:true});}
+function showLoadError(message){document.getElementById('metrics').innerHTML=`<div class="status-box error">${escapeHtml(message)}</div>`;document.getElementById('timelineList').innerHTML='<div class="status-box error">Unable to load the journey timeline.</div>';}
+function escapeHtml(value){return String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'","&#039;");}
+function escapeAttribute(value){return escapeHtml(value);}
 
 loadData();
 </script>
-
 </body>
 </html>
