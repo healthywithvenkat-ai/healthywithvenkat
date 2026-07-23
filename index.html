@@ -1,25 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Healthy with Venkat</title>
-  <meta name="description" content="Healthy with Venkat - My real health transformation documentary." />
-  <style>
-    :root{--green-dark:#0f5b38;--green:#2f7d32;--green-light:#78b93b;--soft:#f5f8f1;--cream:#fcfcf8;--text:#193224;--muted:#567060;--accent:#dfeccf;--shadow:0 18px 48px rgba(15,91,56,.10);--border:rgba(47,125,50,.10)}
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:radial-gradient(circle at top right,rgba(127,191,63,.14),transparent 24%),radial-gradient(circle at top left,rgba(47,125,50,.10),transparent 18%),var(--cream);line-height:1.6}
-    a{text-decoration:none;color:inherit} img{max-width:100%;display:block}.container{width:min(1150px,92%);margin:auto}
-    header{position:sticky;top:0;z-index:100;background:rgba(252,252,248,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(47,125,50,.09)}
-    nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:14px}.brand img{width:58px;height:58px;object-fit:cover;border-radius:50%;border:3px solid rgba(127,191,63,.35);background:#fff;box-shadow:var(--shadow)}.brand-text strong{display:block;color:var(--green-dark);font-size:20px;line-height:1.1}.brand-text span{display:block;color:var(--green);font-size:12px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;margin-top:2px}.nav-links{display:flex;gap:24px;flex-wrap:wrap}.nav-links a{color:var(--muted);font-weight:700;font-size:14px}.nav-links a:hover{color:var(--green-dark)}
-    .hero{padding:72px 0 44px}.hero-wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:34px;align-items:center}.tag{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:var(--accent);color:var(--green-dark);font-size:13px;font-weight:800;margin-bottom:20px}h1{font-size:clamp(40px,6vw,72px);line-height:1.05;margin:0 0 18px;color:var(--green-dark);letter-spacing:-1.5px}.hero p{margin:0 0 28px;color:var(--muted);font-size:18px;max-width:650px}.cta-row{display:flex;gap:14px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:14px;font-weight:800;transition:.2s ease}.btn-primary{background:linear-gradient(135deg,var(--green),var(--green-dark));color:#fff;box-shadow:0 10px 26px rgba(15,91,56,.16)}.btn-secondary{background:#fff;border:1px solid rgba(47,125,50,.18);color:var(--green-dark)}.btn:hover{transform:translateY(-2px)}
-    .hero-card{background:linear-gradient(145deg,#fff,#f1f7eb);border:1px solid rgba(47,125,50,.10);border-radius:34px;padding:30px;box-shadow:var(--shadow)}.hero-logo{width:150px;margin:0 auto 18px}.hero-card h2{margin:0 0 22px;text-align:center;color:var(--green-dark);font-size:34px;line-height:1.15}.quote-box{background:#fff;border-left:5px solid var(--green-light);border-radius:20px;padding:18px 18px 18px 20px;color:var(--text);box-shadow:0 10px 24px rgba(15,91,56,.06)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}.stat{background:linear-gradient(180deg,#fff,#f6faef);border:1px solid rgba(47,125,50,.10);border-radius:20px;padding:18px 14px;text-align:center}.stat strong{display:block;color:var(--green-dark);font-size:24px;line-height:1;margin-bottom:8px}.stat span{display:block;font-size:12px;color:var(--muted);font-weight:700}
-    section{padding:72px 0}.section-title{max-width:760px;margin:0 0 30px}.section-title h2{margin:0 0 12px;font-size:clamp(30px,4vw,46px);color:var(--green-dark);line-height:1.12}.section-title p{margin:0;color:var(--muted);font-size:17px}
-    .mission-strip{background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff}.mission-grid{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}.mission-grid h2{margin:0 0 8px;font-size:clamp(30px,4vw,44px)}.mission-grid p{margin:0;opacity:.88}.mission-badge{min-width:210px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:22px;padding:22px;text-align:center}.mission-badge strong{display:block;font-size:42px}.mission-badge span{font-weight:700;opacity:.9}
-    .dashboard-toolbar{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:24px}.filters{display:flex;gap:10px;flex-wrap:wrap}.filter-btn{border:1px solid rgba(47,125,50,.18);background:#fff;color:var(--green-dark);padding:10px 16px;border-radius:999px;font-weight:800;cursor:pointer}.filter-btn.active{background:var(--green-dark);color:#fff;border-color:var(--green-dark)}.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.metric{background:#fff;border-radius:22px;padding:24px;border:1px solid var(--border);box-shadow:var(--shadow)}.metric span{display:block;color:var(--muted);font-size:13px;font-weight:700;margin-bottom:8px}.metric strong{display:block;color:var(--green-dark);font-size:28px;line-height:1.1}
-    .timeline-wrap{background:linear-gradient(180deg,#f1f7eb,#fcfcf8)}.timeline{display:grid;gap:22px}.post-card{background:#fff;border:1px solid var(--border);border-radius:28px;overflow:hidden;box-shadow:var(--shadow)}.post-image{width:100%;max-height:520px;object-fit:cover;background:#eef5e9}.post-body{padding:28px}.post-meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}.badge{display:inline-flex;padding:6px 10px;border-radius:999px;background:var(--soft);color:var(--green-dark);font-size:12px;font-weight:800}.post-date{color:var(--muted);font-size:13px;font-weight:700}.post-card h3{margin:0 0 12px;color:var(--green-dark);font-size:28px;line-height:1.2}.story{white-space:pre-line;color:#35483c;margin-bottom:18px}.detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}.detail{background:#f8fbf5;border:1px solid #e4eee0;border-radius:16px;padding:16px}.detail strong{display:block;color:var(--green-dark);font-size:13px;margin-bottom:6px}.detail div{color:var(--muted);white-space:pre-line}.status-box{background:#fff;border:1px solid var(--border);border-radius:20px;padding:24px;text-align:center;color:var(--muted)}.status-box.error{color:#9c2f2f;background:#fff4f4}
-    footer{background:#0d3d27;color:#fff;padding:34px 0;text-align:center}footer p{margin:6px 0 0;opacity:.85}
-    @media(max-width:980px){.hero-wrap,.mission-grid{grid-template-columns:1fr}.metric-grid{grid-template-columns:repeat(2,1fr)}.nav-links{display:none}.dashboard-toolbar{align-items:flex-start;flex-direction:column}}@media(max-width:640px){.hero{padding-top:46px}.metric-grid,.detail-grid,.stats{grid-template-columns:1fr}section{padding:56px 0}.post-body{padding:20px}.post-card h3{font-size:24px}}
-  
+from pathlib import Path
+import re
+
+src = Path("/mnt/data/recover/Pasted text(2).txt")
+html = src.read_text(encoding="utf-8")
+
+# Add styles
+css = """
 .metric.clickable{cursor:pointer;transition:.2s ease;position:relative;overflow:hidden}
 .metric.clickable:hover{transform:translateY(-3px);border-color:rgba(47,125,50,.28);box-shadow:0 22px 55px rgba(15,91,56,.15)}
 .metric.clickable::after{content:"View History →";display:block;margin-top:10px;color:var(--green);font-size:12px;font-weight:800}
@@ -43,20 +29,10 @@
 .hba1c-change.down{color:#17823b}.hba1c-change.up{color:#b83c3c}
 .hba1c-note{margin-top:10px;color:var(--muted)}
 @media(max-width:650px){.hba1c-summary{grid-template-columns:1fr}}
+"""
+html = html.replace("</style>", css + "\n</style>", 1)
 
-</style>
-</head>
-<body>
-<header><div class="container"><nav><a href="#home" class="brand"><img src="logo.png" alt="Healthy with Venkat logo" /><div class="brand-text"><strong>Healthy with Venkat</strong><span>Real Food • Real Habits • Real Health</span></div></a><div class="nav-links"><a href="#journey">Journey</a><a href="#dashboard">Dashboard</a><a href="#timeline">Timeline</a><a href="#connect">Connect</a></div></nav></div></header>
-<main>
-<section class="hero" id="home"><div class="container hero-wrap"><div><div class="tag">🌿 My Real Health Transformation Documentary</div><h1>Build your health,<br>one habit at a time.</h1><p>Welcome to <strong>Healthy with Venkat</strong> — my real journey through yoga, mindful food, early routines, health progress, recipes and sustainable lifestyle transformation. Every day becomes part of the story.</p><div class="cta-row"><a href="#dashboard" class="btn btn-primary">View My Progress</a><a href="#timeline" class="btn btn-secondary">Explore My Journey</a></div></div><div class="hero-card"><img src="logo.png" alt="Healthy with Venkat logo" class="hero-logo" /><h2>Real Food.<br>Real Habits. Real Health.</h2><div class="quote-box"><strong>Healthy with Venkat</strong><br>“This is not just a challenge. This is a documented journey of how daily habits are changing my health and my life.”</div><div class="stats"><div class="stat"><strong>Daily</strong><span>Yoga & Health Updates</span></div><div class="stat"><strong>Every Meal</strong><span>Food & Recipes</span></div><div class="stat"><strong>All Time</strong><span>History Preserved</span></div></div></div></div></section>
-<section class="mission-strip" id="journey"><div class="container mission-grid"><div><h2>My Mission: HbA1c 5.5% by or before March 2027</h2><p>This website preserves the complete history of my progress — what I ate, what yoga I practiced, what changed in my body, the recipes I created, the health updates I received and the lessons I learned.</p></div><div class="mission-badge"><strong>5.5%</strong><span>Target HbA1c</span></div></div></section>
-<section id="dashboard"><div class="container"><div class="dashboard-toolbar"><div class="section-title" style="margin:0"><h2>Progress Dashboard</h2><p>Filter my journey and view the complete picture for any period.</p></div><div class="filters"><button class="filter-btn" data-range="7">7 Days</button><button class="filter-btn" data-range="15">15 Days</button><button class="filter-btn active" data-range="30">30 Days</button><button class="filter-btn" data-range="90">90 Days</button><button class="filter-btn" data-range="all">All Time</button></div></div><div id="metrics" class="metric-grid"><div class="status-box">Loading dashboard...</div></div></div></section>
-<section class="timeline-wrap" id="timeline"><div class="container"><div class="section-title"><h2>My Journey Timeline</h2><p>Every published entry stays here as part of my health documentary — in reverse chronological order, with the newest chapter first.</p></div><div id="timelineList" class="timeline"><div class="status-box">Loading journey history...</div></div></div></section>
-<section id="connect"><div class="container"><div class="section-title"><h2>Follow Healthy with Venkat</h2><p>Join the journey across yoga, food, recipes, health progress and long-term transformation.</p></div><div class="metric-grid"><a class="metric" href="https://www.instagram.com/healthywithvenkat_official/" target="_blank" rel="noopener"><span>Instagram</span><strong>@healthywithvenkat_official</strong></a><a class="metric" href="https://www.youtube.com/@healthywithvenkat" target="_blank" rel="noopener"><span>YouTube</span><strong>Healthy with Venkat</strong></a><div class="metric"><span>Core Mission</span><strong>Document. Improve. Inspire.</strong></div><div class="metric"><span>Long-Term Goal</span><strong>Sustainable Health</strong></div></div></div></section>
-</main>
-<footer><div class="container"><strong>Healthy with Venkat</strong><p>Real Food • Real Habits • Real Health</p><p>© <span id="year"></span> Healthy with Venkat. All rights reserved.</p></div></footer>
-
+modal = """
 <div id="hba1cModal" class="modal-backdrop" onclick="closeHbA1cModalOnBackdrop(event)">
   <div class="hba1c-modal">
     <div class="hba1c-modal-header">
@@ -69,10 +45,15 @@
     </div>
   </div>
 </div>
+"""
+html = html.replace("<script>", modal + "\n<script>", 1)
 
-<script>
+js = r"""<script>
 const API_URL='https://script.google.com/macros/s/AKfycbwj80e4PV8oHsAIDrh9SGBDIDy1WuHDjVcLyzQgrQeC5xh9NOG4-sS2torGyEju-bOFgA/exec';
-let selectedRange='30',latestPublicData=null;
+let selectedRange='30';
+let latestPublicData=null;
+let activeJsonpScript=null;
+let activeTimer=null;
 
 const metricDefinitions=[
 ['Current Journey Day','currentJourneyDay',v=>v??'—'],
@@ -91,37 +72,55 @@ const metricDefinitions=[
 
 document.getElementById('year').textContent=new Date().getFullYear();
 
-document.querySelectorAll('.filter-btn').forEach(button=>button.addEventListener('click',()=>{
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  button.classList.add('active');selectedRange=button.dataset.range;loadData();
-}));
+document.querySelectorAll('.filter-btn').forEach(button=>{
+  button.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    button.classList.add('active');
+    selectedRange=button.dataset.range;
+    loadData();
+  });
+});
+
+function healthyWithVenkatData(data){
+  if(activeTimer){clearTimeout(activeTimer);activeTimer=null;}
+  if(activeJsonpScript&&activeJsonpScript.parentNode){
+    activeJsonpScript.parentNode.removeChild(activeJsonpScript);
+  }
+  activeJsonpScript=null;
+
+  if(!data||!data.ok){
+    showLoadError('Unable to load public data.');
+    return;
+  }
+
+  latestPublicData=data;
+  renderMetrics(data.dashboard||{});
+  renderTimeline(data.posts||[]);
+}
 
 function loadData(){
   document.getElementById('metrics').innerHTML='<div class="status-box">Loading dashboard...</div>';
   document.getElementById('timelineList').innerHTML='<div class="status-box">Loading journey history...</div>';
 
-  const cb='hwvCallback_'+Date.now();
-  const s=document.createElement('script');
-
-  const timer=setTimeout(()=>{cleanup();showLoadError('Health data request timed out. Please refresh once.');},15000);
-
-  function cleanup(){
-    clearTimeout(timer);
-    try{delete window[cb]}catch(e){window[cb]=undefined}
-    if(s.parentNode)s.parentNode.removeChild(s);
+  if(activeJsonpScript&&activeJsonpScript.parentNode){
+    activeJsonpScript.parentNode.removeChild(activeJsonpScript);
   }
+  if(activeTimer){clearTimeout(activeTimer);}
 
-  window[cb]=data=>{
-    cleanup();
-    if(!data||!data.ok){showLoadError('Unable to load public data.');return;}
-    latestPublicData=data;
-    renderMetrics(data.dashboard||{});
-    renderTimeline(data.posts||[]);
+  activeJsonpScript=document.createElement('script');
+  activeJsonpScript.src=`${API_URL}?mode=public&range=${encodeURIComponent(selectedRange)}&callback=healthyWithVenkatData`;
+  activeJsonpScript.async=true;
+
+  activeJsonpScript.onerror=function(){
+    if(activeTimer){clearTimeout(activeTimer);activeTimer=null;}
+    showLoadError('Unable to connect to the health data service.');
   };
 
-  s.onerror=()=>{cleanup();showLoadError('Unable to connect to the health data service.');};
-  s.src=`${API_URL}?mode=public&range=${encodeURIComponent(selectedRange)}&callback=${encodeURIComponent(cb)}&_=${Date.now()}`;
-  document.body.appendChild(s);
+  activeTimer=setTimeout(()=>{
+    showLoadError('Health data request timed out. Please refresh once.');
+  },15000);
+
+  document.body.appendChild(activeJsonpScript);
 }
 
 function renderMetrics(d){
@@ -149,11 +148,30 @@ function renderTimeline(posts){
 function openHbA1cModal(){
   const h=latestPublicData&&Array.isArray(latestPublicData.hba1cHistory)?latestPublicData.hba1cHistory:[];
   const m=document.getElementById('hba1cModal'),sum=document.getElementById('hba1cSummary'),list=document.getElementById('hba1cHistoryList');
-  if(!h.length){sum.innerHTML='';list.innerHTML='<div class="status-box">No HbA1c history available yet.</div>';m.classList.add('open');document.body.style.overflow='hidden';return;}
+
+  if(!h.length){
+    sum.innerHTML='';
+    list.innerHTML='<div class="status-box">No HbA1c history available yet.</div>';
+    m.classList.add('open');
+    document.body.style.overflow='hidden';
+    return;
+  }
+
   const latest=h[0],base=h[h.length-1],drop=Number(base.hba1c)-Number(latest.hba1c);
-  sum.innerHTML=`<div class="hba1c-summary-card"><span>Latest HbA1c</span><strong>${latest.hba1c}%</strong></div><div class="hba1c-summary-card"><span>Starting HbA1c</span><strong>${base.hba1c}%</strong></div><div class="hba1c-summary-card"><span>Total Improvement</span><strong>${drop>0?'-':''}${Math.abs(drop).toFixed(1)}%</strong></div>`;
-  list.innerHTML=h.map(i=>{const ch=Number(i.change),has=i.change!==null&&i.change!==''&&!Number.isNaN(ch);return `<article class="hba1c-history-item"><div class="hba1c-row"><div><strong>${formatDate(i.date)}</strong>${i.labName?`<div style="color:var(--muted);font-size:13px">${escapeHtml(i.labName)}</div>`:''}</div><div style="text-align:right"><div class="hba1c-value">${i.hba1c}%</div>${has?`<div class="hba1c-change ${ch<0?'down':'up'}">${ch>0?'+':''}${ch}%</div>`:''}</div></div>${i.notes?`<div class="hba1c-note">${escapeHtml(i.notes)}</div>`:''}</article>`}).join('');
-  m.classList.add('open');document.body.style.overflow='hidden';
+
+  sum.innerHTML=`
+    <div class="hba1c-summary-card"><span>Latest HbA1c</span><strong>${latest.hba1c}%</strong></div>
+    <div class="hba1c-summary-card"><span>Starting HbA1c</span><strong>${base.hba1c}%</strong></div>
+    <div class="hba1c-summary-card"><span>Total Improvement</span><strong>${drop>0?'-':''}${Math.abs(drop).toFixed(1)}%</strong></div>
+  `;
+
+  list.innerHTML=h.map(i=>{
+    const ch=Number(i.change),has=i.change!==null&&i.change!==''&&!Number.isNaN(ch);
+    return `<article class="hba1c-history-item"><div class="hba1c-row"><div><strong>${formatDate(i.date)}</strong>${i.labName?`<div style="color:var(--muted);font-size:13px">${escapeHtml(i.labName)}</div>`:''}</div><div style="text-align:right"><div class="hba1c-value">${i.hba1c}%</div>${has?`<div class="hba1c-change ${ch<0?'down':'up'}">${ch>0?'+':''}${ch}%</div>`:''}</div></div>${i.notes?`<div class="hba1c-note">${escapeHtml(i.notes)}</div>`:''}</article>`;
+  }).join('');
+
+  m.classList.add('open');
+  document.body.style.overflow='hidden';
 }
 
 function closeHbA1cModal(){document.getElementById('hba1cModal').classList.remove('open');document.body.style.overflow='';}
@@ -169,6 +187,10 @@ function escapeHtml(value){return String(value??'').replaceAll('&','&amp;').repl
 function escapeAttribute(value){return escapeHtml(value);}
 
 loadData();
-</script>
-</body>
-</html>
+</script>"""
+
+html = re.sub(r"<script>.*?</script>", lambda m: js, html, count=1, flags=re.S)
+
+out = Path("/mnt/data/index_static_jsonp.html")
+out.write_text(html, encoding="utf-8")
+print(out)
