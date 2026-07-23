@@ -42,6 +42,7 @@
 .hba1c-value{font-size:30px;font-weight:800;color:var(--green-dark)}
 .hba1c-change.down{color:#17823b}.hba1c-change.up{color:#b83c3c}
 .hba1c-note{margin-top:10px;color:var(--muted)}
+.data-bridge{display:none;width:1px;height:1px;border:0}
 @media(max-width:650px){.hba1c-summary{grid-template-columns:1fr}}
 
 </style>
@@ -69,11 +70,13 @@
     </div>
   </div>
 </div>
+<iframe id="dataBridge" class="data-bridge" title="Health data bridge"></iframe>
 
 <script>
 const API_URL='https://script.google.com/macros/s/AKfycbwj80e4PV8oHsAIDrh9SGBDIDy1WuHDjVcLyzQgrQeC5xh9NOG4-sS2torGyEju-bOFgA/exec';
 let selectedRange='30';
 let latestPublicData=null;
+let bridgeTimer=null;
 
 const metricDefinitions=[
 ['Current Journey Day','currentJourneyDay',v=>v??'—'],
@@ -99,25 +102,30 @@ document.querySelectorAll('.filter-btn').forEach(button=>button.addEventListener
   loadData();
 }));
 
-function healthyWithVenkatData(data){
-  if(!data||!data.ok){showLoadError('Unable to load public data.');return;}
+window.addEventListener('message',event=>{
+  const msg=event.data;
+  if(!msg||msg.source!=='healthy-with-venkat'||!msg.payload)return;
+  if(bridgeTimer){clearTimeout(bridgeTimer);bridgeTimer=null;}
+  const data=msg.payload;
+  if(!data.ok){showLoadError('Unable to load public data.');return;}
   latestPublicData=data;
   renderMetrics(data.dashboard||{});
   renderTimeline(data.posts||[]);
-}
+});
 
 function loadData(){
   document.getElementById('metrics').innerHTML='<div class="status-box">Loading dashboard...</div>';
   document.getElementById('timelineList').innerHTML='<div class="status-box">Loading journey history...</div>';
 
-  const old=document.getElementById('hwvJsonpScript');
-  if(old) old.remove();
+  const iframe=document.getElementById('dataBridge');
+  iframe.src='about:blank';
 
-  const s=document.createElement('script');
-  s.id='hwvJsonpScript';
-  s.src=`${API_URL}?mode=public&range=${encodeURIComponent(selectedRange)}&callback=healthyWithVenkatData`;
-  s.onerror=()=>showLoadError('Unable to connect to the health data service.');
-  document.body.appendChild(s);
+  if(bridgeTimer)clearTimeout(bridgeTimer);
+  bridgeTimer=setTimeout(()=>showLoadError('Health data request timed out. Please refresh once.'),15000);
+
+  setTimeout(()=>{
+    iframe.src=`${API_URL}?mode=bridge&range=${encodeURIComponent(selectedRange)}&_=${Date.now()}`;
+  },50);
 }
 
 function renderMetrics(d){
@@ -155,7 +163,6 @@ function openHbA1cModal(){
 function closeHbA1cModal(){document.getElementById('hba1cModal').classList.remove('open');document.body.style.overflow='';}
 function closeHbA1cModalOnBackdrop(e){if(e.target.id==='hba1cModal')closeHbA1cModal();}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeHbA1cModal();});
-
 function addDetail(list,title,value){if(value)list.push(`<div class="detail"><strong>${escapeHtml(title)}</strong><div>${escapeHtml(value)}</div></div>`);}
 function joinParts(parts){return parts.filter(Boolean).join('\n');}
 function formatDate(value){if(!value)return'';const d=new Date(`${value}T00:00:00`);if(isNaN(d.getTime()))return escapeHtml(value);return d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});}
@@ -163,7 +170,6 @@ function formatDinnerTime(value){if(!value)return'';if(/^\d{1,2}:\d{2}$/.test(va
 function showLoadError(message){document.getElementById('metrics').innerHTML=`<div class="status-box error">${escapeHtml(message)}</div>`;document.getElementById('timelineList').innerHTML='<div class="status-box error">Unable to load the journey timeline.</div>';}
 function escapeHtml(value){return String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');}
 function escapeAttribute(value){return escapeHtml(value);}
-
 loadData();
 </script>
 </body>
