@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Healthy with Venkat</title>
+  <meta name="description" content="Healthy with Venkat - Real Food, Real Habits, Real Health." />
+  <style>
+    :root{
+      --green-dark:#0f5b38;
+      --green:#2f7d32;
+      --green-light:#78b93b;
+      --soft:#f5f8f1;
+      --cream:#fcfcf8;
+      --text:#193224;
+      --muted:#567060;
+      --white:#ffffff;
+      --accent:#dfeccf;
+      --shadow:0 18px 48px rgba(15,91,56,.10);
+      --radius:26px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(127,191,63,.14), transparent 24%),
+        radial-gradient(circle at top left, rgba(47,125,50,.10), transparent 18%),
+        var(--cream);
+      line-height:1.6;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(1150px,92%);margin:auto}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(252,252,248,.94);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(47,125,50,.09);
+    }
+
+    nav{
+      min-height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand img{
+      width:58px;height:58px;object-fit:cover;border-radius:50%;
+      border:3px solid rgba(127,191,63,.35);background:#fff;box-shadow:var(--shadow)
+    }
+    .brand-text strong{display:block;color:var(--green-dark);font-size:20px;line-height:1.1}
+    .brand-text span{
+      display:block;color:var(--green);font-size:12px;font-weight:700;
+      letter-spacing:.6px;text-transform:uppercase;margin-top:2px
+    }
+
+    .nav-links{display:flex;gap:24px;flex-wrap:wrap}
+    .nav-links a{color:var(--muted);font-weight:700;font-size:14px}
+    .nav-links a:hover{color:var(--green-dark)}
+
+    .hero{padding:72px 0 44px}
+    .hero-wrap{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:34px;
+      align-items:center;
+    }
+
+    .tag{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:9px 16px;border-radius:999px;background:var(--accent);
+      color:var(--green-dark);font-size:13px;font-weight:800;margin-bottom:20px;
+    }
+
+    h1{
+      font-size:clamp(40px,6vw,72px);
+      line-height:1.05;margin:0 0 18px;color:var(--green-dark);letter-spacing:-1.5px
+    }
+
+    .hero p{margin:0 0 28px;color:var(--muted);font-size:18px;max-width:650px}
+
+    .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:14px 22px;border-radius:14px;font-weight:800;transition:.2s ease
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,var(--green),var(--green-dark));
+      color:#fff;box-shadow:0 10px 26px rgba(15,91,56,.16)
+    }
+    .btn-secondary{
+      background:#fff;border:1px solid rgba(47,125,50,.18);color:var(--green-dark)
+    }
+    .btn:hover{transform:translateY(-2px)}
+
+    .hero-card{
+      background:linear-gradient(145deg,#ffffff,#f1f7eb);
+      border:1px solid rgba(47,125,50,.10);
+      border-radius:34px;padding:30px;box-shadow:var(--shadow);
+    }
+
+    .hero-logo{width:150px;margin:0 auto 18px}
+    .hero-card h2{
+      margin:0 0 22px;text-align:center;color:var(--green-dark);
+      font-size:34px;line-height:1.15
+    }
+
+    .quote-box{
+      background:#fff;border-left:5px solid var(--green-light);
+      border-radius:20px;padding:18px 18px 18px 20px;color:var(--text);
+      box-shadow:0 10px 24px rgba(15,91,56,.06)
+    }
+    .quote-box strong{color:var(--green-dark)}
+
+    .stats{
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:14px;margin-top:22px
+    }
+    .stat{
+      background:linear-gradient(180deg,#ffffff,#f6faef);
+      border:1px solid rgba(47,125,50,.10);
+      border-radius:20px;padding:18px 14px;text-align:center
+    }
+    .stat strong{
+      display:block;color:var(--green-dark);font-size:24px;line-height:1;margin-bottom:8px
+    }
+    .stat span{display:block;font-size:12px;color:var(--muted);font-weight:700}
+
+    section{padding:72px 0}
+    .section-title{max-width:760px;margin:0 0 30px}
+    .section-title h2{
+      margin:0 0 12px;font-size:clamp(30px,4vw,46px);
+      color:var(--green-dark);line-height:1.12
+    }
+    .section-title p{margin:0;color:var(--muted);font-size:17px}
+
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .box{
+      background:#fff;border-radius:var(--radius);padding:28px;
+      border:1px solid rgba(47,125,50,.08);box-shadow:var(--shadow)
+    }
+    .icon{
+      width:54px;height:54px;border-radius:16px;display:grid;place-items:center;
+      background:linear-gradient(145deg,#eef7e6,#dceec2);
+      font-size:26px;margin-bottom:18px
+    }
+    .box h3{margin:0 0 10px;color:var(--green-dark);font-size:22px}
+    .box p{margin:0;color:var(--muted)}
+
+    .journey-band{
+      background:linear-gradient(135deg,var(--green-dark),var(--green));
+      color:#fff
+    }
+    .journey-band .section-title h2,
+    .journey-band .section-title p{color:#fff}
+    .journey-band .section-title p{opacity:.88}
+
+    .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .step{
+      border-radius:24px;padding:24px;background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16)
+    }
+    .step small{
+      display:block;font-weight:800;text-transform:uppercase;
+      letter-spacing:.8px;opacity:.85;margin-bottom:8px
+    }
+    .step h3{margin:0 0 10px;font-size:24px}
+    .step p{margin:0;opacity:.92}
+
+    .progress-wrap{
+      margin-top:30px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+    .progress-card{
+      background:#fff;
+      border-radius:22px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(47,125,50,.08);
+    }
+    .progress-card strong{
+      display:block;
+      color:var(--green-dark);
+      font-size:32px;
+      margin-bottom:6px;
+    }
+    .progress-card span{color:var(--muted);font-weight:700;font-size:14px}
+
+    .two-col{
+      display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch
+    }
+    .highlight{background:linear-gradient(145deg,#f2f9ea,#ffffff)}
+    .list{padding-left:18px;margin:0;color:var(--muted)}
+    .list li{margin:10px 0}
+
+    .daily-card{
+      background:linear-gradient(135deg,#eef7e6,#fff);
+      border:1px solid rgba(47,125,50,.10);
+      border-radius:28px;
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+    .daily-card h3{margin:0 0 14px;color:var(--green-dark);font-size:28px}
+    .daily-card p{color:var(--muted);margin:0 0 18px}
+
+    .social-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .social-card{
+      display:flex;
+      align-items:flex-start;
+      gap:16px;
+      padding:22px;
+      border-radius:22px;
+      background:#fff;
+      border:1px solid rgba(47,125,50,.08);
+      box-shadow:var(--shadow);
+      transition:.2s ease;
+    }
+    .social-card:hover{transform:translateY(-3px)}
+    .social-card .icon{margin-bottom:0;flex-shrink:0}
+    .social-card h3{margin:0 0 6px;color:var(--green-dark)}
+    .social-card p{margin:0;color:var(--muted)}
+
+    footer{
+      background:#0d3d27;color:#fff;padding:34px 0;text-align:center
+    }
+    footer p{margin:6px 0 0;opacity:.85}
+
+    @media (max-width:980px){
+      .hero-wrap,.two-col{grid-template-columns:1fr}
+      .grid-3,.timeline,.stats,.progress-wrap,.social-grid{grid-template-columns:1fr}
+      .nav-links{display:none}
+    }
+
+    @media (max-width:640px){
+      .hero{padding-top:46px}
+      .brand img{width:50px;height:50px}
+      .brand-text strong{font-size:18px}
+      .hero-card{padding:24px}
+      .hero-card h2{font-size:28px}
+      section{padding:56px 0}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#home" class="brand">
+          <img src="logo.png" alt="Healthy with Venkat logo" />
+          <div class="brand-text">
+            <strong>Healthy with Venkat</strong>
+            <span>Real Food • Real Habits • Real Health</span>
+          </div>
+        </a>
+
+        <div class="nav-links">
+          <a href="#journey">Journey</a>
+          <a href="#pillars">Pillars</a>
+          <a href="#yoga">Yoga</a>
+          <a href="#food">Healthy Food</a>
+          <a href="#connect">Connect</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-wrap">
+        <div>
+          <div class="tag">🌿 Healthy with Venkat Wellness Journey</div>
+          <h1>Build your health,<br>one habit at a time.</h1>
+          <p>
+            Welcome to <strong>Healthy with Venkat</strong> — my real journey through yoga,
+            mindful food, early routines and sustainable lifestyle transformation.
+            No extreme shortcuts. Just real habits, practiced consistently.
+          </p>
+          <div class="cta-row">
+            <a href="#journey" class="btn btn-primary">Explore My Journey</a>
+            <a href="#connect" class="btn btn-secondary">Follow the Journey</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="logo.png" alt="Healthy with Venkat logo" class="hero-logo" />
+          <h2>Real Food.<br>Real Habits. Real Health.</h2>
+
+          <div class="quote-box">
+            <strong>Healthy with Venkat</strong><br>
+            “This is not just a challenge. This is a lifestyle built through yoga, food,
+            discipline and daily consistency.”
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>4:30 AM</strong>
+              <span>Daily wake-up discipline</span>
+            </div>
+            <div class="stat">
+              <strong>5 PM</strong>
+              <span>Early dinner routine</span>
+            </div>
+            <div class="stat">
+              <strong>365 Days</strong>
+              <span>Transformation mindset</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey">
+      <div class="container">
+        <div class="section-title">
+          <h2>My real transformation journey</h2>
+          <p>
+            I started by rebuilding movement, then added yoga, mindful food and a disciplined daily routine.
+            The goal is not a temporary challenge — it is a stronger, healthier life.
+          </p>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-card">
+            <strong>87.9 kg</strong>
+            <span>Starting weight</span>
+          </div>
+          <div class="progress-card">
+            <strong>83.0 kg</strong>
+            <span>Recent milestone</span>
+          </div>
+          <div class="progress-card">
+            <strong>4.9 kg</strong>
+            <span>Total reduction achieved</span>
+          </div>
+          <div class="progress-card">
+            <strong>Daily</strong>
+            <span>Yoga, mindful food & consistency</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="journey-band">
+      <div class="container">
+        <div class="section-title">
+          <h2>How the journey evolved</h2>
+          <p>Every phase has added one more layer to a healthier lifestyle.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="step">
+            <small>Phase 01</small>
+            <h3>Start Moving</h3>
+            <p>
+              I began with regular walking and rebuilt the habit of daily movement.
+            </p>
+          </div>
+
+          <div class="step">
+            <small>Phase 02</small>
+            <h3>Build the Practice</h3>
+            <p>
+              Yoga became a daily discipline with Surya Namaskar, pranayama and body awareness.
+            </p>
+          </div>
+
+          <div class="step">
+            <small>Phase 03</small>
+            <h3>Live the Lifestyle</h3>
+            <p>
+              Food timing, early mornings, mindful meals and consistency now work together as one lifestyle.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pillars">
+      <div class="container">
+        <div class="section-title">
+          <h2>The pillars behind Healthy with Venkat</h2>
+          <p>Simple habits that are practical enough to repeat and strong enough to create real change.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="box">
+            <div class="icon">🧘</div>
+            <h3>Yoga & Breath</h3>
+            <p>
+              Daily yoga, Surya Namaskar, stretching, pranayama and mindful practice
+              for strength, flexibility and inner balance.
+            </p>
+          </div>
+
+          <div class="box">
+            <div class="icon">🥗</div>
+            <h3>Healthy Food</h3>
+            <p>
+              Simple home food, mindful meal timing, balanced choices and an early dinner routine.
+            </p>
+          </div>
+
+          <div class="box">
+            <div class="icon">🌅</div>
+            <h3>Discipline & Routine</h3>
+            <p>
+              Early mornings, consistency and accountability — because transformation is built through repetition.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="yoga">
+      <div class="container two-col">
+        <div class="box highlight">
+          <div class="section-title">
+            <h2>Yoga with Venkat</h2>
+            <p>
+              My goal is to make yoga and healthy living feel simple, practical and approachable,
+              especially for busy professionals and beginners.
+            </p>
+          </div>
+
+          <ul class="list">
+            <li>Beginner-friendly yoga routines</li>
+            <li>Surya Namaskar and body mobility</li>
+            <li>Pranayama and breathing practices</li>
+            <li>Mindful lifestyle guidance</li>
+            <li>Consistency and accountability</li>
+          </ul>
+        </div>
+
+        <div class="daily-card">
+          <h3>Current lifestyle focus</h3>
+          <p>
+            My personal journey includes early mornings, daily yoga, mindful food, early dinners
+            and consistent health tracking.
+          </p>
+          <ul class="list">
+            <li>Wake-up discipline around 4:30 AM</li>
+            <li>Daily yoga practice</li>
+            <li>Early dinner around 5:00–5:30 PM</li>
+            <li>Simple home-based healthy meals</li>
+            <li>Long-term sustainable transformation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="food">
+      <div class="container">
+        <div class="section-title">
+          <h2>Healthy food, without making life complicated</h2>
+          <p>
+            My food philosophy is simple: eat real food, choose better ingredients, build balance
+            and create a routine that is sustainable for everyday life.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="box">
+            <div class="icon">🥣</div>
+            <h3>Nourishing Soups</h3>
+            <p>
+              Vegetable-based soups, dals, greens and simple home recipes that are easy to make and easy to repeat.
+            </p>
+          </div>
+
+          <div class="box">
+            <div class="icon">🌾</div>
+            <h3>Millet-Based Choices</h3>
+            <p>
+              Exploring ragi, jowar and other whole-food alternatives as part of a balanced lifestyle.
+            </p>
+          </div>
+
+          <div class="box">
+            <div class="icon">⏰</div>
+            <h3>Better Meal Timing</h3>
+            <p>
+              A consistent early dinner routine has become one of the strongest habits in my wellness journey.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="connect">
+      <div class="container">
+        <div class="section-title">
+          <h2>Follow Healthy with Venkat</h2>
+          <p>
+            Join my real-life journey around yoga, healthy food, mindful habits and sustainable transformation.
+          </p>
+        </div>
+
+        <div class="social-grid">
+          <a class="social-card" href="https://www.instagram.com/healthywithvenkat_official/" target="_blank" rel="noopener">
+            <div class="icon">📸</div>
+            <div>
+              <h3>Instagram</h3>
+              <p>@healthywithvenkat_official</p>
+            </div>
+          </a>
+
+          <div class="social-card">
+            <div class="icon">▶️</div>
+            <div>
+              <h3>YouTube</h3>
+              <p>Healthy with Venkat</p>
+            </div>
+          </div>
+
+          <div class="social-card">
+            <div class="icon">💚</div>
+            <div>
+              <h3>My Mission</h3>
+              <p>To inspire people to build better health through practical daily habits.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <strong>Healthy with Venkat</strong>
+      <p>Real Food • Real Habits • Real Health</p>
+      <p>© <span id="year"></span> Healthy with Venkat. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
